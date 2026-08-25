@@ -6,7 +6,7 @@ import {
     eventControls,
     directionControls, 
     speedControls
-} from "/JS/controls.js";
+} from "JS/controls.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
