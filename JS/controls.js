@@ -1,4 +1,4 @@
-import { refreshGrid } from "JS/grid.js";
+import { refreshGrid } from "/JS/grid.js";
 
 export let head = 1225;  // x,y -> (0,0) center a fej/szemek kezdőpozíciója a grid-en
 export let speed = 100;
