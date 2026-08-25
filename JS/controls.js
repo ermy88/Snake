@@ -1,10 +1,12 @@
-// import {row, col} from "/JS/grid.js";
+import { refreshGrid } from "./grid.js";
 
-let direction = 0; // 0:U, 1:D, 2:L, 3:R
-let head = 1225;  // x,y -> (0,0) center a fej/szemek kezdőpozíciója a grid-en
-let speed = 100;
+export let head = 1225;  // x,y -> (0,0) center a fej/szemek kezdőpozíciója a grid-en
+export let speed = 100;
+export let vel = document.getElementById('score');
+let direction = 2; // 0:U, 1:D, 2:L, 3:R
 let gameLoopId = 0; // setIntervalId-t kap
 let pauseGame = true;
+
 
 
 
@@ -23,6 +25,7 @@ export function snakeMotion() {
     // console.log(snakeBody);
     // console.log(snakeBody2);
 }
+
 export function removeSnake() {
     const snakeHead = document.getElementsByClassName('cell')[head];
     // const snakeBody = document.getElementsByClassName('cell')[head + 50];
@@ -33,21 +36,20 @@ export function removeSnake() {
     // snakeBody2.classList.remove("snake-body");
 
 }
+
+
+export function startGame(gameSpeed) {
+    pauseGame = false;
+    if (gameLoopId == 0) {
+        gameLoopId = setInterval(gameTick, gameSpeed);
+    }
+
+}
 function gameTick() {
 
     removeSnake();
     atWall();
     snakeMotion();
-}
-
-
-
-export function startGame(gameSpeed) {
-    gameSpeed = speed;
-    pauseGame = false;
-    if (gameLoopId == 0) {
-        gameLoopId = setInterval(gameTick, gameSpeed);
-    }
 }
 
 export function togglePause() {
@@ -67,9 +69,7 @@ export function stopGame() {
 }
 
 export function directionControls() {
-
     document.addEventListener('keydown', (event) => {
-
         if (event.key === "ArrowUp") {
             (direction === 1) ? direction = 1 : direction = 0;  // önmagába visszafordulás blokkolása
         }
@@ -87,18 +87,29 @@ export function directionControls() {
 }
 
 export function eventControls() {
-
     document.addEventListener('keydown', (event) => {
-
         if (event.key === "Enter") {
-            startGame(1000);
+            startGame(speed);
         }
         else if (event.key === "q" || event.key === "Q") { // END GAME
-            removeSnake();
             stopGame();
+            refreshGrid();
         }
         else if (event.key === "p" || event.key === "P") {
             togglePause();
+        }
+    });
+}
+export function speedControls() {
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key === "+") {
+            speed -= 20;
+            vel.textContent = speed;
+        }
+        else if (event.key === "-") {
+            speed += 20;
+            vel.textContent = speed;
         }
     });
 }

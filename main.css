@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html body {
   display: flex;
   flex-direction: column;
@@ -7,6 +8,14 @@ html body {
 }
 html body h1 {
   color: lime;
+  font-weight: bold;
+}
+html body #controls #score {
+  color: chartreuse;
+  font-weight: bold;
+}
+html body #controls #score::before {
+  content: "Sebesség: ";
 }
 html body .grid5050 {
   display: grid;
@@ -23,6 +32,7 @@ html body .grid5050 {
 html body .grid5050 div.cell {
   border: 1px solid darkgreen;
 }
+
 .snake-head {
   background-color: limegreen;
 }

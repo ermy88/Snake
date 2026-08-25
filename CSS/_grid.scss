@@ -1,4 +1,3 @@
-
 html {
 
 
@@ -11,6 +10,17 @@ html {
 
         h1 {
             color: lime;
+            font-weight: bold;
+        }
+
+        #controls {
+            #score {
+                color: chartreuse;
+                font-weight: bold;
+                &::before{
+                    content: 'Sebesség: ';
+                }
+            }
         }
 
         .grid5050 {
@@ -27,10 +37,11 @@ html {
 
             div.cell {
                 border: 1px solid darkgreen;
-                &:hover{
+
+                // &:hover {
                     // background-color: grey;
                     // border-radius: 50%;
-                }
+                // }
             }
         }
     }
