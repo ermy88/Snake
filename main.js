@@ -1,11 +1,11 @@
-import { renderGrid, refreshGrid } from "./JS/grid.js";
+import { renderGrid, refreshGrid } from "JS/grid.js";
 import {
     startGame,
     stopGame,
     removeSnake,
     eventControls,
     directionControls
-} from "./JS/controls.js";
+} from "JS/controls.js";
 
 
 document.addEventListener('DOMContentLoaded', () => {
