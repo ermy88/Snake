@@ -1,4 +1,4 @@
-import { renderGrid, refreshGrid } from "JS/grid.js";
+import { renderGrid, refreshGrid } from "/JS/grid.js";
 import {
     startGame,
     stopGame,
