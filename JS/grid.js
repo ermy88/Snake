@@ -2,7 +2,7 @@ import {
     head,
     vel,
     speed
-} from "/controls.js"
+} from "controls.js"
 
 
 const col = 50;
