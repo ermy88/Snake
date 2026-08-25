@@ -1,13 +1,10 @@
-import {
-    renderGrid,
-    refreshGrid
-} from "/JS/grid.js";
+import { renderGrid, refreshGrid } from "/JS/grid.js";
 import {
     startGame,
     stopGame,
     removeSnake,
     eventControls,
-    directionControls,
+    directionControls, 
     speedControls
 } from "/JS/controls.js";
 
