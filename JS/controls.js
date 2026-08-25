@@ -104,12 +104,12 @@ export function speedControls() {
 
     document.addEventListener('keydown', (event) => {
         if (event.key === "+") {
-            speed -= 20;
-            vel.textContent = speed;
+            (speed <= 20) ? speed = 20 : speed -= 20;
+            vel.textContent = speed / 20;
         }
         else if (event.key === "-") {
-            speed += 20;
-            vel.textContent = speed;
+            (speed >= 100) ? speed = 100 : speed += 20;
+            vel.textContent = speed / 20;
         }
     });
 }

@@ -10,7 +10,7 @@ const row = 50;
 
 export function renderGrid() {
     const grid = document.getElementsByClassName('grid5050')[0];
-    vel.textContent = speed;
+    vel.textContent = speed / 20;
 
 
     for (let i = 0; i < col * row; i++) {
